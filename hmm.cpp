@@ -186,7 +186,7 @@ void filtering(const vector<int>& obs) {
 
     for(int r=0;r<ROWS;r++)
         for(int c=0;c<COLS;c++)
-            if(valid(r,c))
+            if(valid(r,c)) //If valid, normalize 
                 belief[r][c]=belief[r][c]/total*100.0;
 }
 
@@ -203,7 +203,7 @@ int main() {
     waitForEnter();
 
     filtering({0,0,0,1});
-    printBelief("Filtering after Evidence [0,0,0,1]");
+    printBelief("Filtering after Evidence [W, N, E, S] [0,0,0,1]");
     waitForEnter();
 
     prediction(NORTH);
@@ -211,7 +211,7 @@ int main() {
     waitForEnter();
 
     filtering({1,0,0,0});
-    printBelief("Filtering after Evidence [1,0,0,0]");
+    printBelief("Filtering after Evidence [W, N, E, S] [1,0,0,0]");
     waitForEnter();
 
     prediction(NORTH);
@@ -219,7 +219,7 @@ int main() {
     waitForEnter();
 
     filtering({1,1,0,0});
-    printBelief("Filtering after Evidence [1,1,0,0]");
+    printBelief("Filtering after Evidence [W, N, E, S] [1,1,0,0]");
     waitForEnter();
 
     prediction(EAST);
@@ -227,7 +227,7 @@ int main() {
     waitForEnter();
 
     filtering({0,1,1,0});
-    printBelief("Filtering after Evidence [0,1,1,0]");
+    printBelief("Filtering after Evidence [W, N, E, S] [0,1,1,0]");
     waitForEnter();
 
     return 0;
